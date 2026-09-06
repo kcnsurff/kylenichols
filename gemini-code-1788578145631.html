@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-black text-white font-sans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Nichols</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond / Playfair Display & Space Grotesk / Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        fancy: ['Cormorant Garamond', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="h-full overflow-x-hidden font-sans antialiased selection:bg-white selection:text-black">
+
+    <!-- FULLSCREEN BACKGROUND IMAGE -->
+    <div class="fixed inset-0 z-0">
+        <img src="unnamed.jpg" alt="Film Mountain Photograph by Kyle Nichols" class="w-full h-full object-cover object-center filter brightness-[0.8] contrast-[1.05]">
+        <!-- Subtle Vignette / Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/60"></div>
+    </div>
+
+    <!-- MAIN INTERFACE -->
+    <div class="relative z-10 min-h-full flex flex-col justify-between p-8 sm:p-14 max-w-7xl mx-auto">
+        
+        <!-- Top Header with Fancy Name -->
+        <header class="flex justify-between items-center">
+            <span class="font-fancy italic text-3xl sm:text-4xl text-white tracking-wider font-semibold drop-shadow">Kyle Nichols</span>
+        </header>
+
+        <!-- SPREAD-OUT ELEGANT SERIF LINKS -->
+        <main class="my-auto py-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 items-center">
+                
+                <!-- Link 1: About Me -->
+                <button onclick="openModal('about-modal')" class="group text-left transition duration-300">
+                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 block">
+                        About Me <span class="inline-block text-base font-sans not-italic text-gray-400 group-hover:translate-x-1.5 group-hover:text-amber-200 transition-transform">↗</span>
+                    </span>
+                </button>
+
+                <!-- Link 2: Experience -->
+                <button onclick="openModal('experience-modal')" class="group text-left transition duration-300">
+                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 block">
+                        Experience <span class="inline-block text-base font-sans not-italic text-gray-400 group-hover:translate-x-1.5 group-hover:text-amber-200 transition-transform">↗</span>
+                    </span>
+                </button>
+
+                <!-- Link 3: Service & Interests -->
+                <button onclick="openModal('adventures-modal')" class="group text-left transition duration-300">
+                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 block">
+                        Service & Interests <span class="inline-block text-base font-sans not-italic text-gray-400 group-hover:translate-x-1.5 group-hover:text-amber-200 transition-transform">↗</span>
+                    </span>
+                </button>
+
+                <!-- Link 4: Resume (Direct Link to PDF) -->
+                <a href="Nichols, Kyle.pdf" target="_blank" rel="noopener" class="group text-left transition duration-300 block pl-2 lg:pl-6">
+                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 block">
+                        Resume <span class="inline-block text-base font-sans not-italic text-gray-400 group-hover:translate-x-1.5 group-hover:text-amber-200 transition-transform">↗</span>
+                    </span>
+                </a>
+
+            </div>
+        </main>
+
+        <!-- Clean Empty Footer Container -->
+        <footer class="py-4"></footer>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODALS                                     -->
+    <!-- ========================================== -->
+
+    <!-- ABOUT ME MODAL -->
+    <div id="about-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md overflow-y-auto p-4 sm:p-8 flex justify-center items-center">
+        <div class="bg-[#121212] border border-white/10 max-w-3xl w-full rounded-2xl p-6 sm:p-10 relative space-y-8 text-gray-200 my-auto shadow-2xl">
+            <button onclick="closeModal('about-modal')" class="absolute top-6 right-6 font-mono text-xs text-gray-400 hover:text-white bg-white/5 px-3 py-1.5 rounded-full border border-white/10">✕ CLOSE</button>
+            
+            <div class="grid sm:grid-cols-12 gap-8 items-center">
+                <div class="sm:col-span-5 space-y-4">
+                    <img src="headshothxp.jpg" alt="Kyle Nichols" class="rounded-xl w-full object-cover aspect-[4/5] border border-white/10 shadow-lg">
+                </div>
+
+                <div class="sm:col-span-7 space-y-4 text-sm sm:text-base leading-relaxed text-gray-300 font-light">
+                    <h2 class="text-3xl font-serif italic text-white">Hi, I'm Kyle.</h2>
+                    <p>
+                        I'm currently a student at Brigham Young University studying sociology with a minor in business. I’m fascinated by the "human engine" behind successful ventures—exploring how collaborative strategy, organizational culture, and personal connection drive meaningful growth.
+                    </p>
+                    <p>
+                        Originally from San Diego and now living in Utah, I spend as much time outdoors as possible surfing, skiing, mountain biking, and skateboarding. I'm also deeply passionate about music, live concerts, and <a href="https://www.flickr.com/people/kcnsurf/" target="_blank" rel="noopener" class="text-amber-200 hover:text-white transition underline underline-offset-4 font-normal">film photography</a>—in fact, the mountain background on this site is a shot I took on 35mm film.
+                    </p>
+
+                    <!-- DIRECT CONTACT & ICON SOCIALS -->
+                    <div class="pt-4 border-t border-white/10 space-y-4">
+                        <div class="text-sm font-sans text-gray-300">
+                            <a href="mailto:kcnsurf@gmail.com" class="text-amber-200 hover:text-white transition underline underline-offset-4">kcnsurf@gmail.com</a>
+                            <span class="text-gray-400 ml-3">(858) 213-5074</span>
+                        </div>
+
+                        <!-- LOGO ICONS FOR SOCIALS -->
+                        <div class="flex items-center gap-5 text-gray-400 pt-1">
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/kyle-nichols92130" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-amber-200 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/kylecnichols/" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-amber-200 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/kcnsurf" target="_blank" rel="noopener" aria-label="Facebook" class="hover:text-amber-200 transition">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE MODAL -->
+    <div id="experience-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md overflow-y-auto p-4 sm:p-8 flex justify-center items-center">
+        <div class="bg-[#121212] border border-white/10 max-w-3xl w-full rounded-2xl p-6 sm:p-10 relative space-y-8 text-gray-200 my-auto shadow-2xl">
+            <button onclick="closeModal('experience-modal')" class="absolute top-6 right-6 font-mono text-xs text-gray-400 hover:text-white bg-white/5 px-3 py-1.5 rounded-full border border-white/10">✕ CLOSE</button>
+            
+            <h2 class="text-3xl font-serif italic text-white">Experience</h2>
+
+            <div class="space-y-8 max-h-[60vh] overflow-y-auto pr-3">
+                
+                <!-- Role 1: Up8 PM -->
+                <div class="space-y-2 border-b border-white/10 pb-6">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-white">Product Management Intern</h3>
+                        <span class="text-xs font-mono text-amber-200">Jul 2026 – Present</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">Up8 · Provo, UT</p>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed pt-1">
+                        Spearheading product strategy for a single-tap sneaker registration feature connecting physical footwear directly to an iOS app. I author Product Requirements Documents (PRDs) and Jira Epics, balancing hardware constraints and manufacturing viability with a seamless digital user experience.
+                    </p>
+                </div>
+
+                <!-- Role 2: Trader Joe's -->
+                <div class="space-y-2 border-b border-white/10 pb-6">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-white">Crew Member</h3>
+                        <span class="text-xs font-mono text-amber-200">Aug 2017 – Present</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">Trader Joe's · Orem, UT & San Diego, CA</p>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed pt-1">
+                        Working in a fast-paced retail environment where customer connection and brand standards are everything. I deliver high-touch service to 50+ guests per shift, manage inventory and logistics, and mentor 10+ new hires on consumer-facing communication to keep store culture strong.
+                    </p>
+                </div>
+
+                <!-- Role 3: Good Game Collective -->
+                <div class="space-y-2 border-b border-white/10 pb-6">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-white">Marketing & Analyst Intern</h3>
+                        <span class="text-xs font-mono text-gray-400">May 2026 – Aug 2026</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">Good Game Collective · Salt Lake City, UT</p>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed pt-1">
+                        Mapped a $46B youth sports TAM across 35+ segments to isolate 18 prime growth opportunities. I ran outreach to parents, rinks, and extreme sports orgs—generating $60,000+ in revenue, 100+ camp leads, and identifying 30+ acquisition targets across skate, snow, MTB, and surf markets.
+                    </p>
+                </div>
+
+                <!-- Role 4: Up8 General Intern -->
+                <div class="space-y-2 border-b border-white/10 pb-6">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-white">General Intern</h3>
+                        <span class="text-xs font-mono text-gray-400">Jul 2025 – Aug 2025</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">Up8 · Provo, UT</p>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed pt-1">
+                        Partnered directly with the CEO on growth marketing and investor relations in an early-stage startup setting. Conducted market research on 20+ strategic firms to secure retail expansion partners and coordinated monthly company-wide meetings across five departments.
+                    </p>
+                </div>
+
+                <!-- Role 5: White Bison Well-Being -->
+                <div class="space-y-2 border-b border-white/10 pb-6">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-white">Sponsor Liaison</h3>
+                        <span class="text-xs font-mono text-gray-400">Jan 2025 – Apr 2025</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">White Bison Well-Being · Provo, UT</p>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed pt-1">
+                        Facilitated weekly alignment meetings with key organizational sponsors. Co-authored a 50-page wellness guide to streamline client health education and foster transparent executive communication.
+                    </p>
+                </div>
+
+                <!-- Role 6: Joshua's Pest Control -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-white">Office Expert</h3>
+                        <span class="text-xs font-mono text-gray-400">Jul 2023 – Aug 2023</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">Joshua's Pest Control · San Diego, CA</p>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed pt-1">
+                        Interacted directly with clients over the phone to explain service packages, tailored solutions for homeowners, utilized CRM tools to organize accounts, and collaborated closely with sales and field technician teams.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE & INTERESTS MODAL -->
+    <div id="adventures-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md overflow-y-auto p-4 sm:p-8 flex justify-center items-center">
+        <div class="bg-[#121212] border border-white/10 max-w-3xl w-full rounded-2xl p-6 sm:p-10 relative space-y-8 text-gray-200 my-auto shadow-2xl">
+            <button onclick="closeModal('adventures-modal')" class="absolute top-6 right-6 font-mono text-xs text-gray-400 hover:text-white bg-white/5 px-3 py-1.5 rounded-full border border-white/10">✕ CLOSE</button>
+            
+            <h2 class="text-3xl font-serif italic text-white">Service & Interests</h2>
+
+            <div class="space-y-6 text-sm max-h-[60vh] overflow-y-auto pr-2">
+                
+                <!-- 1. Volunteer Service -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 space-y-3">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-bold text-white text-base">Volunteer Representative</h3>
+                        <span class="text-xs font-mono text-amber-200">Jul 2021 – Jul 2023</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">The Church of Jesus Christ of Latter-day Saints</p>
+                    <p class="text-gray-300 text-xs leading-relaxed font-light">
+                        Spent two years serving communities across various regions of Jamaica and the Bahamas. I had the privilege of supporting, training, and overseeing 70+ church missionaries while building meaningful connections with local communities.
+                    </p>
+                </div>
+
+                <!-- 2. Boy Scouts Project Leader -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 space-y-3">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="font-bold text-white text-base">Project Leader</h3>
+                        <span class="text-xs font-mono text-amber-200">Jan 2018 – Aug 2018</span>
+                    </div>
+                    <p class="text-xs font-mono text-gray-400">Boy Scouts of America · San Diego, CA</p>
+                    <p class="text-gray-300 text-xs leading-relaxed font-light">
+                        Organized and executed a guardrail reconstruction project for a local church, managing materials purchasing, logistics, and leading 20+ volunteers through planning and final installation.
+                    </p>
+                </div>
+
+                <!-- 3. Music Sub-Section -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 space-y-3">
+                    <h3 class="font-bold text-white text-base">Live Music & Concerts</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed font-light">
+                        A dedicated enthusiast of live music and indie/alternative genres, with a particular appreciation for artists like Dominic Fike and Malcolm Todd. I have attended over 30 concerts nationwide, including three attendances at the Kilby Block Party in Salt Lake City and the New York Governor's Ball.
+                    </p>
+                </div>
+
+                <!-- 4. Outdoors Sub-Section -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 space-y-3">
+                    <h3 class="font-bold text-white text-base">Outdoors & Athletics</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed font-light">
+                        Active in outdoor sports, including surfing in Costa Rica, swimming with sharks in Hawaii and California, and skiing throughout Utah mountain ranges. Former varsity track and field athlete and high school surf and basketball team member.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT FOR MODALS -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = ['about-modal', 'experience-modal', 'adventures-modal'];
+                modals.forEach(id => closeModal(id));
+            }
+        });
+    </script>
+
+</body>
+</html>
