@@ -25,7 +25,7 @@
         }
     </script>
 </head>
-<body class="h-full overflow-x-hidden font-sans antialiased selection:bg-white selection:text-black">
+<body class="h-full overflow-hidden font-sans antialiased selection:bg-white selection:text-black bg-black">
 
     <!-- FULLSCREEN BACKGROUND IMAGE -->
     <div class="fixed inset-0 z-0">
@@ -34,53 +34,45 @@
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/60"></div>
     </div>
 
-    <!-- MAIN INTERFACE -->
-    <div class="relative z-10 min-h-full flex flex-col justify-between p-8 sm:p-14 max-w-7xl mx-auto">
-        
-        <!-- Top Header with Fancy Name -->
-        <header class="flex justify-between items-center">
-            <span class="font-fancy italic text-3xl sm:text-4xl text-white tracking-wider font-semibold drop-shadow">Kyle Nichols</span>
-        </header>
+    <!-- TOP HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-20 p-8 sm:p-14 flex justify-between items-center pointer-events-none">
+        <span class="font-fancy italic text-3xl sm:text-4xl text-white tracking-wider font-semibold drop-shadow pointer-events-auto">Kyle Nichols</span>
+    </header>
 
-        <!-- PERFECTLY CENTERED MAIN MENU -->
-        <main class="my-auto py-12 w-full">
-            <div class="max-w-4xl mx-auto flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12 text-center">
-                
-                <!-- Link 1: About Me -->
-                <button onclick="openModal('about-modal')" class="group text-center transition duration-300">
-                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
-                        About Me
-                    </span>
-                </button>
+    <!-- ABSOLUTE DEAD-CENTER MAIN NAVIGATION -->
+    <main class="fixed inset-0 z-10 flex items-center justify-center p-6">
+        <div class="w-full max-w-5xl flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-12 text-center">
+            
+            <!-- Link 1: About Me -->
+            <button onclick="openModal('about-modal')" class="group transition duration-300">
+                <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
+                    About Me
+                </span>
+            </button>
 
-                <!-- Link 2: Experience -->
-                <button onclick="openModal('experience-modal')" class="group text-center transition duration-300">
-                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
-                        Experience
-                    </span>
-                </button>
+            <!-- Link 2: Experience -->
+            <button onclick="openModal('experience-modal')" class="group transition duration-300">
+                <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
+                    Experience
+                </span>
+            </button>
 
-                <!-- Link 3: Service & Interests -->
-                <button onclick="openModal('adventures-modal')" class="group text-center transition duration-300">
-                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
-                        Service & Interests
-                    </span>
-                </button>
+            <!-- Link 3: Service & Interests -->
+            <button onclick="openModal('adventures-modal')" class="group transition duration-300">
+                <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
+                    Service & Interests
+                </span>
+            </button>
 
-                <!-- Link 4: Resume -->
-                <a href="Nichols, Kyle.pdf" target="_blank" rel="noopener" class="group text-center transition duration-300 inline-block">
-                    <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
-                        Resume
-                    </span>
-                </a>
+            <!-- Link 4: Resume -->
+            <a href="Nichols, Kyle.pdf" target="_blank" rel="noopener" class="group transition duration-300">
+                <span class="font-serif italic text-lg sm:text-xl lg:text-2xl text-white group-hover:text-amber-200 transition duration-300 whitespace-nowrap">
+                    Resume
+                </span>
+            </a>
 
-            </div>
-        </main>
-
-        <!-- Clean Empty Footer Container -->
-        <footer class="py-4"></footer>
-
-    </div>
+        </div>
+    </main>
 
     <!-- ========================================== -->
     <!-- MODALS                                     -->
